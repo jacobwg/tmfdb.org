@@ -266,11 +266,15 @@
     }
   };
 
-  if (document.readyState === "complete") {
-    window.setTimeout(pageinit, 1000);
-  } else if (window.addEventListener) {
-    window.addEventListener('load', pageinit, false);
+  if (!window.HuluFilterLoaded) {
+    if (document.readyState === "complete") {
+      window.setTimeout(pageinit, 1000);
+    } else if (window.addEventListener) {
+      window.addEventListener('load', pageinit, false);
+    }
   }
+
+  window.HuluFilterLoaded = true;
 
   Filter = (function() {
 
