@@ -8,6 +8,8 @@ pageinit = ->
   success = (message) ->
     Notification.success message
 
+  info "Filter loading..."
+
   window.h = new HuluVideo
   if !h.is_video or !h.has_cid
     error 'Oops - this is not a valid Hulu video page...'

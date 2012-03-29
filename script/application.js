@@ -243,6 +243,7 @@
     success = function(message) {
       return Notification.success(message);
     };
+    info("Filter loading...");
     window.h = new HuluVideo;
     if (!h.is_video || !h.has_cid) {
       return error('Oops - this is not a valid Hulu video page...');
