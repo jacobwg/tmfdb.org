@@ -58,6 +58,10 @@ class HuluVideo
             self.trigger 'change:subtitles', self
             self.subs_loaded = true
             self.build_blocklist()
+          else
+            self.trigger 'no:subtitles'
+      else
+        self.trigger 'no:subtitles'
 
   build_blocklist: ->
     return unless @subs_loaded
