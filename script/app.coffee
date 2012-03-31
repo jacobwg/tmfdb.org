@@ -26,7 +26,9 @@ pageinit = ->
       window.muter = muter
     h.load_subtitles()
 
-unless window.HuluFilterLoaded
+if window.HuluFilterLoaded
+  info 'The filter is already running...'
+else
   if document.readyState is "complete"
     window.setTimeout(pageinit, 1000)
   else if window.addEventListener
